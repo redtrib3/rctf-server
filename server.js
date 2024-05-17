@@ -4,10 +4,10 @@ const path  = require('path');
 
 const apiRoutes = require('./routes/apiRoutes');
 const redirectRoutes = require('./routes/redirects');
+const RedirectSubdomain = require('./middleware/SubdomainRedirect');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
 const corsAllowList = process.env.ALLOWED_ORIGINS.split(',');
 const corsArgs =  { origin: corsAllowList };
 
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use(redirectSubdomain);
 app.use(redirectRoutes);
 app.use('/api', apiRoutes);
 
