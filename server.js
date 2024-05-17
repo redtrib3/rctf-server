@@ -8,10 +8,14 @@ const redirectRoutes = require('./routes/redirects');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const corsAllowList = process.env.ALLOWED_ORIGINS.split(',');
+const corsArgs =  { origin: corsAllowList };
+
+app.use(cors(corsArgs));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors());
+
 
 app.use(redirectRoutes);
 app.use('/api', apiRoutes);
@@ -21,5 +25,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log('APP IS LISTENING ON - http://0.0.0.0:3000/');
+    console.log(`APP IS LISTENING ON - http://0.0.0.0:${PORT}/`);
 });
