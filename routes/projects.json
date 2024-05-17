@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Brutal-FX",
+    "stack": "Python",
+    "desc": "A Python script demonstarting bruteforce attacks on Authentication pages.",
+    "stars": "76",
+    "forks": "14",
+    "link": "https://github.com/redtrib3/Brutal-FX"
+  },
+  {
+    "title": "CTF Challenge-playground",
+    "stack": "Vue.js, Express.js, MongoDB",
+    "desc": "A Collection of CTF challenges created by me varying in type and difficulty.",
+    "stars": "00",
+    "forks": "00",
+    "link": "https://github.com/redtrib3/challenges"
+  },
+  {
+    "title": "Sploit Search",
+    "stack": "Python",
+    "desc": "Search for Exploits easily without the need of a local database.",
+    "stars": "03",
+    "forks": "01",
+    "link": "https://github.com/redtrib3/sploit-search"
+  },
+  {
+    "title": "gurl",
+    "stack": "Go",
+    "desc": "Faster Curl made with Go - gurl",
+    "stars": "00",
+    "forks": "00",
+    "link": "https://github.com/redtrib3/gurl"
+  },
+  {
+    "title": "Stocks API",
+    "stack": "Python - FastAPI",
+    "desc": "API to GET the real time Stocks/Crypto Information",
+    "stars": "00",
+    "forks": "00",
+    "link": "https://github.com/redtrib3/gurl"
+  },
+  {
+    "title": "Spylogger",
+    "stack": "Python",
+    "desc": "Spylogger is a keylogger for windows OS that captures the keystrokes and send it to your gmail after every 100 characters typed.",
+    "stars": "01",
+    "forks": "01",
+    "link": "https://github.com/redtrib3/Spylogger"
+  }
+
+]

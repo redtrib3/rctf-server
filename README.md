@@ -1,2 +1,1 @@
-# rctf-server
-Full stack source code for RCTF
+# RCTF-Server
