@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(redirectSubdomain);
+app.use(RedirectSubdomain);
 app.use(redirectRoutes);
 app.use('/api', apiRoutes);
 
