@@ -7,6 +7,8 @@ const redirectRoutes = require('./routes/redirects');
 const RedirectSubdomain = require('./middleware/SubdomainRedirect');
 
 const app = express();
+app.disable('x-powered-by');
+
 const PORT = process.env.PORT || 3000;
 const corsAllowList = process.env.ALLOWED_ORIGINS.split(',');
 const corsArgs =  { origin: corsAllowList };
