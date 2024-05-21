@@ -21,12 +21,20 @@ function filePathExists(filepath) {
 
 
 router.get('/download/:fileName', (req, res) => {
-    const reqFile = path.join(__dirname, '../files/', req.params.fileName);
-    if (filePathExists(reqFile)) {
-        res.setHeader('Content-Disposition', `attachment; filename=${req.params.fileName}`);
-        res.sendFile(reqFile);
+    const fileName = path.basename(req.params.fileName);
+    const reqFile = path.join(__dirname, '../files/', fileName);
+
+    // Check if the requested file is within the intended directory
+    const relative = path.relative(path.join(__dirname, '../files/'), reqFile);
+    if (relative && !relative.startsWith('..') && !path.isAbsolute(relative)) {
+        if (fs.existsSync(reqFile)) {
+            res.setHeader('Content-Disposition', `attachment; filename=${fileName}`);
+            res.sendFile(reqFile);
+        } else {
+            res.status(404).json({ success: false });
+        }
     } else {
-        res.status(404).json({ success: false });
+        res.status(400).json({ success: false, message: 'Invalid file path' });
     }
 });
 
