@@ -6,6 +6,8 @@ const apiRoutes = require('./routes/apiRoutes');
 const redirectRoutes = require('./routes/redirects');
 const RedirectSubdomain = require('./middleware/SubdomainRedirect');
 
+const extraRoutes = require('./routes/extras.js') // extra endpoints
+
 const app = express();
 app.disable('x-powered-by');
 
@@ -21,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(RedirectSubdomain);
 app.use(redirectRoutes);
 app.use('/api', apiRoutes);
+app.use('/extras', extraRoutes);
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
