@@ -16,7 +16,7 @@ router.get('/obsecurity', async (req, res) => {
 
     try {
         if (user_pass === process.env.OBSECURITY_PASS) {
-            return res.json({ success: true, flag: FLAG });
+            return res.json({ success: true, flag: OBSECURITY_FLAG });
         }
 
         return res.json({ success: false });
